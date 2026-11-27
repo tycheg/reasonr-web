@@ -1,0 +1,639 @@
+{
+  "version": 1,
+  "app": "Admin",
+  "screen": "Ordering.AdminOrder",
+  "lang": "en",
+  "platform": "web",
+  "title": "Order",
+  "params": [
+    {
+      "name": "orderId",
+      "type": "Ordering.Order.Id"
+    }
+  ],
+  "nodes": [
+    {
+      "bind": {
+        "type": "Ordering.Order",
+        "method": "Details",
+        "result": "Ordering.OrderDetails",
+        "args": [
+          {
+            "name": "orderId",
+            "type": "Ordering.Order.Id",
+            "from": "param",
+            "field": "orderId"
+          }
+        ]
+      },
+      "children": [
+        {
+          "field": "status",
+          "fieldType": "Ordering.OrderStatus",
+          "id": 2,
+          "key": "status",
+          "kind": "field",
+          "label": "Status",
+          "primitive": "Tag",
+          "text": "Ordering.OrderDetails.status",
+          "types": {
+            "E": "Ordering.OrderStatus"
+          }
+        },
+        {
+          "children": [
+            {
+              "auto": true,
+              "field": "amount",
+              "fieldType": "decimal",
+              "id": 4,
+              "key": "amount",
+              "kind": "field",
+              "label": "Amount",
+              "primitive": "Text",
+              "text": "Ordering.Money.amount",
+              "types": {
+                "T": "decimal"
+              }
+            },
+            {
+              "auto": true,
+              "field": "currency",
+              "fieldType": "Ordering.Currency",
+              "id": 5,
+              "key": "currency",
+              "kind": "field",
+              "label": "Currency",
+              "primitive": "Tag",
+              "text": "Ordering.Money.currency",
+              "types": {
+                "E": "Ordering.Currency"
+              }
+            }
+          ],
+          "field": "price",
+          "fieldType": "Ordering.Money",
+          "id": 3,
+          "key": "price",
+          "kind": "field",
+          "label": "Price",
+          "primitive": "Fields",
+          "text": "Ordering.OrderDetails.price",
+          "types": {
+            "V": "Ordering.Money"
+          }
+        },
+        {
+          "children": [
+            {
+              "auto": true,
+              "children": [
+                {
+                  "auto": true,
+                  "field": "lat",
+                  "fieldType": "float",
+                  "id": 8,
+                  "key": "lat",
+                  "kind": "field",
+                  "label": "Lat",
+                  "primitive": "Text",
+                  "text": "Ordering.GeoPoint.lat",
+                  "types": {
+                    "T": "float"
+                  }
+                },
+                {
+                  "auto": true,
+                  "field": "lon",
+                  "fieldType": "float",
+                  "id": 9,
+                  "key": "lon",
+                  "kind": "field",
+                  "label": "Lon",
+                  "primitive": "Text",
+                  "text": "Ordering.GeoPoint.lon",
+                  "types": {
+                    "T": "float"
+                  }
+                }
+              ],
+              "field": "from",
+              "fieldType": "Ordering.GeoPoint",
+              "id": 7,
+              "key": "from",
+              "kind": "field",
+              "label": "From",
+              "primitive": "Fields",
+              "text": "Ordering.Route.from",
+              "types": {
+                "V": "Ordering.GeoPoint"
+              }
+            },
+            {
+              "auto": true,
+              "children": [
+                {
+                  "auto": true,
+                  "field": "lat",
+                  "fieldType": "float",
+                  "id": 11,
+                  "key": "lat",
+                  "kind": "field",
+                  "label": "Lat",
+                  "primitive": "Text",
+                  "text": "Ordering.GeoPoint.lat",
+                  "types": {
+                    "T": "float"
+                  }
+                },
+                {
+                  "auto": true,
+                  "field": "lon",
+                  "fieldType": "float",
+                  "id": 12,
+                  "key": "lon",
+                  "kind": "field",
+                  "label": "Lon",
+                  "primitive": "Text",
+                  "text": "Ordering.GeoPoint.lon",
+                  "types": {
+                    "T": "float"
+                  }
+                }
+              ],
+              "field": "to",
+              "fieldType": "Ordering.GeoPoint",
+              "id": 10,
+              "key": "to",
+              "kind": "field",
+              "label": "To",
+              "primitive": "Fields",
+              "text": "Ordering.Route.to",
+              "types": {
+                "V": "Ordering.GeoPoint"
+              }
+            },
+            {
+              "auto": true,
+              "field": "distanceKm",
+              "fieldType": "float",
+              "id": 13,
+              "key": "distanceKm",
+              "kind": "field",
+              "label": "Distance km",
+              "primitive": "Text",
+              "text": "Ordering.Route.distanceKm",
+              "types": {
+                "T": "float"
+              }
+            }
+          ],
+          "field": "orderRoute",
+          "fieldType": "Ordering.Route",
+          "id": 6,
+          "key": "orderRoute",
+          "kind": "field",
+          "label": "Order route",
+          "primitive": "Fields",
+          "text": "Ordering.OrderDetails.orderRoute",
+          "types": {
+            "V": "Ordering.Route"
+          }
+        },
+        {
+          "field": "requestedClass",
+          "fieldType": "Ordering.CarClass",
+          "id": 14,
+          "key": "requestedClass",
+          "kind": "field",
+          "label": "Requested class",
+          "primitive": "Tag",
+          "text": "Ordering.OrderDetails.requestedClass",
+          "types": {
+            "E": "Ordering.CarClass"
+          }
+        },
+        {
+          "field": "placedAt",
+          "fieldType": "timestamp",
+          "id": 15,
+          "key": "placedAt",
+          "kind": "field",
+          "label": "Placed at",
+          "primitive": "DateTime",
+          "text": "Ordering.OrderDetails.placedAt"
+        },
+        {
+          "field": "driverName",
+          "fieldType": "string?",
+          "id": 16,
+          "key": "driverName",
+          "kind": "field",
+          "label": "Driver name",
+          "primitive": "Text",
+          "text": "Ordering.OrderDetails.driverName",
+          "types": {
+            "T": "string?"
+          }
+        },
+        {
+          "children": [
+            {
+              "bind": {
+                "type": "Ordering.Order",
+                "method": "Edit",
+                "command": true,
+                "target": {
+                  "name": "order",
+                  "type": "Ordering.Order.Id",
+                  "from": "data",
+                  "node": 1,
+                  "field": "orderId"
+                },
+                "args": [
+                  {
+                    "name": "orderRoute",
+                    "type": "Ordering.Route",
+                    "from": "data",
+                    "node": 1,
+                    "field": "orderRoute",
+                    "input": true
+                  },
+                  {
+                    "name": "requestedClass",
+                    "type": "Ordering.CarClass",
+                    "from": "data",
+                    "node": 1,
+                    "field": "requestedClass",
+                    "input": true
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "auto": true,
+                  "children": [
+                    {
+                      "auto": true,
+                      "children": [
+                        {
+                          "auto": true,
+                          "field": "lat",
+                          "fieldType": "float",
+                          "id": 21,
+                          "input": true,
+                          "key": "lat",
+                          "kind": "field",
+                          "label": "Lat",
+                          "primitive": "NumberInput",
+                          "text": "Ordering.GeoPoint.lat"
+                        },
+                        {
+                          "auto": true,
+                          "field": "lon",
+                          "fieldType": "float",
+                          "id": 22,
+                          "input": true,
+                          "key": "lon",
+                          "kind": "field",
+                          "label": "Lon",
+                          "primitive": "NumberInput",
+                          "text": "Ordering.GeoPoint.lon"
+                        }
+                      ],
+                      "field": "from",
+                      "fieldType": "Ordering.GeoPoint",
+                      "id": 20,
+                      "input": true,
+                      "key": "from",
+                      "kind": "field",
+                      "label": "From",
+                      "primitive": "Group",
+                      "text": "Ordering.Route.from",
+                      "types": {
+                        "V": "Ordering.GeoPoint"
+                      }
+                    },
+                    {
+                      "auto": true,
+                      "children": [
+                        {
+                          "auto": true,
+                          "field": "lat",
+                          "fieldType": "float",
+                          "id": 24,
+                          "input": true,
+                          "key": "lat",
+                          "kind": "field",
+                          "label": "Lat",
+                          "primitive": "NumberInput",
+                          "text": "Ordering.GeoPoint.lat"
+                        },
+                        {
+                          "auto": true,
+                          "field": "lon",
+                          "fieldType": "float",
+                          "id": 25,
+                          "input": true,
+                          "key": "lon",
+                          "kind": "field",
+                          "label": "Lon",
+                          "primitive": "NumberInput",
+                          "text": "Ordering.GeoPoint.lon"
+                        }
+                      ],
+                      "field": "to",
+                      "fieldType": "Ordering.GeoPoint",
+                      "id": 23,
+                      "input": true,
+                      "key": "to",
+                      "kind": "field",
+                      "label": "To",
+                      "primitive": "Group",
+                      "text": "Ordering.Route.to",
+                      "types": {
+                        "V": "Ordering.GeoPoint"
+                      }
+                    },
+                    {
+                      "auto": true,
+                      "field": "distanceKm",
+                      "fieldType": "float",
+                      "id": 26,
+                      "input": true,
+                      "key": "distanceKm",
+                      "kind": "field",
+                      "label": "Distance km",
+                      "primitive": "NumberInput",
+                      "text": "Ordering.Route.distanceKm"
+                    }
+                  ],
+                  "field": "orderRoute",
+                  "fieldType": "Ordering.Route",
+                  "id": 19,
+                  "input": true,
+                  "key": "orderRoute",
+                  "kind": "field",
+                  "label": "Order route",
+                  "primitive": "Group",
+                  "text": "Ordering.Order.Edit.orderRoute",
+                  "types": {
+                    "V": "Ordering.Route"
+                  }
+                },
+                {
+                  "auto": true,
+                  "field": "requestedClass",
+                  "fieldType": "Ordering.CarClass",
+                  "id": 27,
+                  "input": true,
+                  "key": "requestedClass",
+                  "kind": "field",
+                  "label": "Requested class",
+                  "primitive": "Select",
+                  "text": "Ordering.Order.Edit.requestedClass",
+                  "types": {
+                    "E": "Ordering.CarClass"
+                  }
+                }
+              ],
+              "id": 18,
+              "if": {
+                "func": "ui.Ordering.AdminOrder:Order.Edit.if",
+                "args": [
+                  {
+                    "name": "status",
+                    "type": "Ordering.OrderStatus",
+                    "from": "data",
+                    "node": 1,
+                    "field": "status"
+                  }
+                ]
+              },
+              "key": "Order.Edit",
+              "kind": "primitive",
+              "label": "Edit",
+              "place": "Admin.AdminOrder:Order.Edit",
+              "primitive": "Edit"
+            },
+            {
+              "bind": {
+                "type": "Ordering.Order",
+                "method": "Cancel",
+                "command": true,
+                "target": {
+                  "name": "order",
+                  "type": "Ordering.Order.Id",
+                  "from": "data",
+                  "node": 1,
+                  "field": "orderId"
+                },
+                "args": [
+                  {
+                    "name": "reason",
+                    "type": "string",
+                    "from": "input",
+                    "input": true
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "auto": true,
+                  "field": "reason",
+                  "fieldType": "string",
+                  "id": 29,
+                  "input": true,
+                  "key": "reason",
+                  "kind": "field",
+                  "label": "Reason",
+                  "primitive": "TextInput",
+                  "text": "Ordering.Order.Cancel.reason"
+                }
+              ],
+              "id": 28,
+              "if": {
+                "func": "ui.Ordering.AdminOrder:Order.Cancel.if",
+                "args": [
+                  {
+                    "name": "status",
+                    "type": "Ordering.OrderStatus",
+                    "from": "data",
+                    "node": 1,
+                    "field": "status"
+                  }
+                ]
+              },
+              "key": "Order.Cancel",
+              "kind": "primitive",
+              "label": "Cancel",
+              "place": "Admin.AdminOrder:Order.Cancel",
+              "primitive": "Confirm"
+            }
+          ],
+          "id": 17,
+          "key": "Actions",
+          "kind": "part",
+          "part": "Actions"
+        }
+      ],
+      "id": 1,
+      "key": "Order.Details",
+      "kind": "primitive",
+      "label": "Details",
+      "place": "Admin.AdminOrder:Order.Details",
+      "primitive": "Card",
+      "types": {
+        "V": "Ordering.OrderDetails"
+      }
+    }
+  ],
+  "types": {
+    "Ordering.CarClass": {
+      "values": [
+        "economy",
+        "comfort"
+      ],
+      "labels": {
+        "comfort": "Comfort",
+        "economy": "Economy"
+      }
+    },
+    "Ordering.Currency": {
+      "values": [
+        "rub"
+      ],
+      "labels": {
+        "rub": "Rub"
+      }
+    },
+    "Ordering.GeoPoint": {
+      "fields": [
+        {
+          "name": "lat",
+          "type": "float",
+          "label": "Lat"
+        },
+        {
+          "name": "lon",
+          "type": "float",
+          "label": "Lon"
+        }
+      ]
+    },
+    "Ordering.Money": {
+      "fields": [
+        {
+          "name": "amount",
+          "type": "decimal",
+          "label": "Amount"
+        },
+        {
+          "name": "currency",
+          "type": "Ordering.Currency",
+          "label": "Currency"
+        }
+      ]
+    },
+    "Ordering.OrderDetails": {
+      "fields": [
+        {
+          "name": "orderId",
+          "type": "Ordering.Order.Id",
+          "label": "Order id"
+        },
+        {
+          "name": "status",
+          "type": "Ordering.OrderStatus",
+          "label": "Status"
+        },
+        {
+          "name": "orderRoute",
+          "type": "Ordering.Route",
+          "label": "Order route"
+        },
+        {
+          "name": "requestedClass",
+          "type": "Ordering.CarClass",
+          "label": "Requested class"
+        },
+        {
+          "name": "price",
+          "type": "Ordering.Money",
+          "label": "Price"
+        },
+        {
+          "name": "placedAt",
+          "type": "timestamp",
+          "label": "Placed at"
+        },
+        {
+          "name": "driverName",
+          "type": "string?",
+          "label": "Driver name"
+        }
+      ]
+    },
+    "Ordering.OrderStatus": {
+      "values": [
+        "searching",
+        "offered",
+        "assigned",
+        "completed",
+        "paid",
+        "unpaid",
+        "cancelled",
+        "noDrivers"
+      ],
+      "labels": {
+        "assigned": "The driver is on the way",
+        "cancelled": "Cancelled",
+        "completed": "Ride completed",
+        "noDrivers": "No drivers",
+        "offered": "Offered to a driver",
+        "paid": "Paid",
+        "searching": "Looking for a driver",
+        "unpaid": "Not paid"
+      }
+    },
+    "Ordering.Route": {
+      "fields": [
+        {
+          "name": "from",
+          "type": "Ordering.GeoPoint",
+          "label": "From"
+        },
+        {
+          "name": "to",
+          "type": "Ordering.GeoPoint",
+          "label": "To"
+        },
+        {
+          "name": "distanceKm",
+          "type": "float",
+          "label": "Distance km"
+        }
+      ]
+    }
+  },
+  "messages": {
+    "Ordering.Order.cannotCancel": {
+      "text": "Cannot cancel an order with status {currentStatus}"
+    },
+    "Ordering.Order.cannotEdit": {
+      "text": "Cannot change an order with status {currentStatus}"
+    },
+    "Ordering.Order.cannotTip": {
+      "text": "Tips come after the ride is paid, now {currentStatus}"
+    },
+    "Ordering.Order.driverOnTheWay": {
+      "text": "The driver is on the way"
+    },
+    "Ordering.Order.orderPlaced": {
+      "text": "Order placed, price {price}"
+    },
+    "Ordering.Order.tipsDisabled": {
+      "text": "Tips are not available yet"
+    }
+  }
+}

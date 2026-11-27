@@ -1,0 +1,25 @@
+{
+  "name": "@tycheg/reasonr-std-ui",
+  "version": "0.1.0",
+  "description": "The standard ReasonR primitive catalog on Ant Design",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tycheg/reasonr-web.git",
+    "directory": "packages/std-ui"
+  },
+  "type": "module",
+  "main": "src/index.tsx",
+  "dependencies": {
+    "antd": "^6.7.0"
+  },
+  "peerDependencies": {
+    "@tycheg/reasonr-runtime": "*",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": { "access": "public" }
+}

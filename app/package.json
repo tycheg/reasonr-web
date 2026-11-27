@@ -1,0 +1,14 @@
+{
+  "name": "@tycheg/reasonr-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The embedded build: the runtime and the standard catalog (web/bundle/src/dist)",
+  "type": "module",
+  "scripts": { "build": "vite build" },
+  "dependencies": {
+    "@tycheg/reasonr-runtime": "*",
+    "@tycheg/reasonr-std-ui": "*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

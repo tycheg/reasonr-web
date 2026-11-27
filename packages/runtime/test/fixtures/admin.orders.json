@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "app": "Admin",
+  "screen": "Ordering.AdminOrders",
+  "lang": "en",
+  "platform": "web",
+  "title": "Orders",
+  "nodes": [
+    {
+      "children": [
+        {
+          "id": 2,
+          "key": "AdminNewOrder",
+          "kind": "primitive",
+          "label": "New order",
+          "primitive": "Link",
+          "to": {
+            "screen": "Ordering.AdminNewOrder"
+          }
+        }
+      ],
+      "id": 1,
+      "key": "Toolbar",
+      "kind": "primitive",
+      "primitive": "Toolbar"
+    },
+    {
+      "bind": {
+        "type": "Ordering.Order",
+        "method": "List",
+        "result": "page\u003cOrdering.OrderRow\u003e",
+        "args": [
+          {
+            "name": "wanted",
+            "type": "Ordering.OrderStatus",
+            "from": "input",
+            "input": true,
+            "default": true,
+            "value": "searching"
+          },
+          {
+            "name": "pageReq",
+            "type": "PageRequest",
+            "from": "primitive"
+          }
+        ]
+      },
+      "children": [
+        {
+          "children": [
+            {
+              "field": "placedAt",
+              "fieldType": "timestamp",
+              "id": 5,
+              "key": "placedAt",
+              "kind": "field",
+              "label": "Placed",
+              "primitive": "DateTime",
+              "text": "Ordering.OrderRow.placedAt"
+            },
+            {
+              "field": "status",
+              "fieldType": "Ordering.OrderStatus",
+              "id": 6,
+              "key": "status",
+              "kind": "field",
+              "label": "Status",
+              "primitive": "Tag",
+              "text": "Ordering.OrderRow.status",
+              "types": {
+                "E": "Ordering.OrderStatus"
+              }
+            },
+            {
+              "children": [
+                {
+                  "auto": true,
+                  "field": "amount",
+                  "fieldType": "decimal",
+                  "id": 8,
+                  "key": "amount",
+                  "kind": "field",
+                  "label": "Amount",
+                  "primitive": "Text",
+                  "text": "Ordering.Money.amount",
+                  "types": {
+                    "T": "decimal"
+                  }
+                },
+                {
+                  "auto": true,
+                  "field": "currency",
+                  "fieldType": "Ordering.Currency",
+                  "id": 9,
+                  "key": "currency",
+                  "kind": "field",
+                  "label": "Currency",
+                  "primitive": "Tag",
+                  "text": "Ordering.Money.currency",
+                  "types": {
+                    "E": "Ordering.Currency"
+                  }
+                }
+              ],
+              "field": "price",
+              "fieldType": "Ordering.Money",
+              "id": 7,
+              "key": "price",
+              "kind": "field",
+              "label": "Price",
+              "primitive": "Fields",
+              "text": "Ordering.OrderRow.price",
+              "types": {
+                "V": "Ordering.Money"
+              }
+            }
+          ],
+          "id": 4,
+          "key": "Columns",
+          "kind": "part",
+          "part": "Columns",
+          "rows": true
+        },
+        {
+          "children": [
+            {
+              "bind": {
+                "type": "Ordering.Order",
+                "method": "Cancel",
+                "command": true,
+                "target": {
+                  "name": "order",
+                  "type": "Ordering.Order.Id",
+                  "from": "row",
+                  "node": 3,
+                  "field": "orderId"
+                },
+                "args": [
+                  {
+                    "name": "reason",
+                    "type": "string",
+                    "from": "input",
+                    "input": true
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "auto": true,
+                  "field": "reason",
+                  "fieldType": "string",
+                  "id": 12,
+                  "input": true,
+                  "key": "reason",
+                  "kind": "field",
+                  "label": "Reason",
+                  "primitive": "TextInput",
+                  "text": "Ordering.Order.Cancel.reason"
+                }
+              ],
+              "id": 11,
+              "if": {
+                "func": "ui.Ordering.AdminOrders:Order.Cancel.if",
+                "args": [
+                  {
+                    "name": "status",
+                    "type": "Ordering.OrderStatus",
+                    "from": "row",
+                    "node": 3,
+                    "field": "status"
+                  }
+                ]
+              },
+              "key": "Order.Cancel",
+              "kind": "primitive",
+              "label": "Cancel order",
+              "place": "Admin.AdminOrders:Order.Cancel",
+              "primitive": "Confirm"
+            }
+          ],
+          "id": 10,
+          "key": "RowActions",
+          "kind": "part",
+          "part": "RowActions",
+          "rows": true
+        },
+        {
+          "event": "open",
+          "id": 13,
+          "kind": "on",
+          "to": {
+            "screen": "Ordering.AdminOrder",
+            "args": [
+              {
+                "name": "orderId",
+                "type": "Ordering.Order.Id",
+                "from": "event",
+                "node": 3,
+                "field": "orderId"
+              }
+            ]
+          }
+        },
+        {
+          "auto": true,
+          "children": [
+            {
+              "auto": true,
+              "field": "wanted",
+              "fieldType": "Ordering.OrderStatus",
+              "id": 15,
+              "input": true,
+              "key": "wanted",
+              "kind": "field",
+              "label": "Wanted",
+              "primitive": "Select",
+              "text": "Ordering.Order.List.wanted",
+              "types": {
+                "E": "Ordering.OrderStatus"
+              }
+            }
+          ],
+          "id": 14,
+          "key": "Filters",
+          "kind": "part",
+          "part": "Filters"
+        }
+      ],
+      "id": 3,
+      "key": "Order.List",
+      "kind": "primitive",
+      "label": "List",
+      "params": [
+        {
+          "name": "size",
+          "value": {
+            "value": 20
+          }
+        }
+      ],
+      "place": "Admin.AdminOrders:Order.List",
+      "primitive": "Table",
+      "types": {
+        "Row": "Ordering.OrderRow"
+      }
+    }
+  ],
+  "types": {
+    "Ordering.Currency": {
+      "values": [
+        "rub"
+      ],
+      "labels": {
+        "rub": "Rub"
+      }
+    },
+    "Ordering.Money": {
+      "fields": [
+        {
+          "name": "amount",
+          "type": "decimal",
+          "label": "Amount"
+        },
+        {
+          "name": "currency",
+          "type": "Ordering.Currency",
+          "label": "Currency"
+        }
+      ]
+    },
+    "Ordering.OrderRow": {
+      "fields": [
+        {
+          "name": "orderId",
+          "type": "Ordering.Order.Id",
+          "label": "Order id"
+        },
+        {
+          "name": "status",
+          "type": "Ordering.OrderStatus",
+          "label": "Status"
+        },
+        {
+          "name": "price",
+          "type": "Ordering.Money",
+          "label": "Price"
+        },
+        {
+          "name": "placedAt",
+          "type": "timestamp",
+          "label": "Placed"
+        }
+      ]
+    },
+    "Ordering.OrderStatus": {
+      "values": [
+        "searching",
+        "offered",
+        "assigned",
+        "completed",
+        "paid",
+        "unpaid",
+        "cancelled",
+        "noDrivers"
+      ],
+      "labels": {
+        "assigned": "The driver is on the way",
+        "cancelled": "Cancelled",
+        "completed": "Ride completed",
+        "noDrivers": "No drivers",
+        "offered": "Offered to a driver",
+        "paid": "Paid",
+        "searching": "Looking for a driver",
+        "unpaid": "Not paid"
+      }
+    }
+  },
+  "messages": {
+    "Ordering.Order.cannotCancel": {
+      "text": "Cannot cancel an order with status {currentStatus}"
+    },
+    "Ordering.Order.cannotEdit": {
+      "text": "Cannot change an order with status {currentStatus}"
+    },
+    "Ordering.Order.cannotTip": {
+      "text": "Tips come after the ride is paid, now {currentStatus}"
+    },
+    "Ordering.Order.driverOnTheWay": {
+      "text": "The driver is on the way"
+    },
+    "Ordering.Order.orderPlaced": {
+      "text": "Order placed, price {price}"
+    },
+    "Ordering.Order.tipsDisabled": {
+      "text": "Tips are not available yet"
+    }
+  }
+}

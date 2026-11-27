@@ -1,0 +1,49 @@
+{
+  "name": "@tycheg/reasonr-vite",
+  "version": "0.1.0",
+  "description": "ReasonR engine UI tools: the reasonr-ui command (dev, test, build, types, typecheck), a Vite plugin with custom primitive implementations, the primitives page",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tycheg/reasonr-web.git",
+    "directory": "packages/vite"
+  },
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "bin": {
+    "reasonr-ui": "bin/reasonr-ui.mjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./tsconfig.json": "./tsconfig.json",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "jsdom": "^26.1.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.4.5",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@tycheg/reasonr-runtime": "*",
+    "@tycheg/reasonr-std-ui": "*",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "files": [
+    "app",
+    "bin",
+    "src",
+    "tsconfig.json"
+  ],
+  "publishConfig": { "access": "public" }
+}

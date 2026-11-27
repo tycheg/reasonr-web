@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "app": "Admin",
+  "lang": "en",
+  "title": "Admin",
+  "platforms": [
+    "web"
+  ],
+  "me": "Ordering.Staff",
+  "nodes": [
+    {
+      "children": [
+        {
+          "id": 2,
+          "key": "AdminOrders",
+          "kind": "screen",
+          "label": "Orders",
+          "to": {
+            "screen": "Ordering.AdminOrders"
+          }
+        },
+        {
+          "id": 3,
+          "key": "NewDriver",
+          "kind": "screen",
+          "label": "New driver",
+          "to": {
+            "screen": "Dispatch.NewDriver"
+          }
+        },
+        {
+          "id": 4,
+          "key": "AdminProfile",
+          "kind": "screen",
+          "label": "Profile",
+          "to": {
+            "screen": "Ordering.AdminProfile"
+          }
+        }
+      ],
+      "id": 1,
+      "key": "Menu",
+      "kind": "primitive",
+      "primitive": "Menu"
+    }
+  ],
+  "screens": {
+    "Dispatch.NewDriver": "fbd489663e25201f",
+    "Ordering.AdminNewOrder": "b0d6f0959d16ba27",
+    "Ordering.AdminOrder": "cddee9450772891b",
+    "Ordering.AdminOrders": "4ff07787bcdc65e3",
+    "Ordering.AdminProfile": "6582918ce908712c"
+  },
+  "places": [
+    {
+      "name": "Admin.AdminOrders:Order.List",
+      "screen": "Ordering.AdminOrders",
+      "node": 3,
+      "type": "Ordering.Order",
+      "method": "List"
+    },
+    {
+      "name": "Admin.AdminOrders:Order.Cancel",
+      "screen": "Ordering.AdminOrders",
+      "node": 11,
+      "type": "Ordering.Order",
+      "method": "Cancel",
+      "command": true
+    },
+    {
+      "name": "Admin.NewDriver:Driver.Register",
+      "screen": "Dispatch.NewDriver",
+      "node": 1,
+      "type": "Dispatch.Driver",
+      "method": "Register",
+      "command": true
+    },
+    {
+      "name": "Admin.AdminProfile:Staff.Profile",
+      "screen": "Ordering.AdminProfile",
+      "node": 1,
+      "type": "Ordering.Staff",
+      "method": "Profile"
+    },
+    {
+      "name": "Admin.AdminProfile:Staff.ChangeEmail",
+      "screen": "Ordering.AdminProfile",
+      "node": 3,
+      "type": "Ordering.Staff",
+      "method": "ChangeEmail",
+      "command": true
+    },
+    {
+      "name": "Admin.AdminNewOrder:Customer.OrderTaxi",
+      "screen": "Ordering.AdminNewOrder",
+      "node": 1,
+      "type": "Ordering.Customer",
+      "method": "OrderTaxi",
+      "command": true
+    },
+    {
+      "name": "Admin.AdminOrder:Order.Details",
+      "screen": "Ordering.AdminOrder",
+      "node": 1,
+      "type": "Ordering.Order",
+      "method": "Details"
+    },
+    {
+      "name": "Admin.AdminOrder:Order.Edit",
+      "screen": "Ordering.AdminOrder",
+      "node": 18,
+      "type": "Ordering.Order",
+      "method": "Edit",
+      "command": true
+    },
+    {
+      "name": "Admin.AdminOrder:Order.Cancel",
+      "screen": "Ordering.AdminOrder",
+      "node": 28,
+      "type": "Ordering.Order",
+      "method": "Cancel",
+      "command": true
+    }
+  ]
+}

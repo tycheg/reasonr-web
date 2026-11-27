@@ -1,0 +1,21 @@
+{
+  "name": "@tycheg/reasonr-runtime",
+  "version": "0.1.0",
+  "description": "The ReasonR web runtime: screen descriptions, data, forms, navigation, notifications, labels",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tycheg/reasonr-web.git",
+    "directory": "packages/runtime"
+  },
+  "type": "module",
+  "main": "src/index.ts",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": { "access": "public" }
+}
