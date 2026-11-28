@@ -4,9 +4,9 @@ go 1.27.4
 
 require (
 	github.com/mxschmitt/playwright-go v0.6401.0
-	github.com/tycheg/reasonr-compiler v0.1.0
-	github.com/tycheg/reasonr-engine v0.1.2
-	github.com/tycheg/reasonr-engine/port v0.1.0
+	github.com/tycheg/reasonr-compiler v0.2.0
+	github.com/tycheg/reasonr-engine v0.2.0
+	github.com/tycheg/reasonr-engine/port v0.2.0
 )
 
 require (

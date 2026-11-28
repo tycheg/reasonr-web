@@ -1,6 +1,6 @@
 {
   "name": "@tycheg/reasonr-std-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The standard ReasonR primitive catalog on Ant Design",
   "license": "Apache-2.0",
   "repository": {

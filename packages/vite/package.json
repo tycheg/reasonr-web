@@ -1,6 +1,6 @@
 {
   "name": "@tycheg/reasonr-vite",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ReasonR engine UI tools: the reasonr-ui command (dev, test, build, types, typecheck), a Vite plugin with custom primitive implementations, the primitives page",
   "license": "Apache-2.0",
   "engines": {

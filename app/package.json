@@ -1,6 +1,6 @@
 {
   "name": "@tycheg/reasonr-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "The embedded build: the runtime and the standard catalog (web/bundle/src/dist)",
   "type": "module",
