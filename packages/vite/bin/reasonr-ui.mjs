@@ -187,7 +187,10 @@ switch (cmd) {
     break;
   }
   case "typecheck": {
-    const tsc = createRequire(import.meta.url).resolve("typescript/bin/tsc");
+    // The package exports no bin/ (TypeScript 7): the path is its bin field.
+    const ts = createRequire(import.meta.url).resolve("typescript/package.json");
+    const bin = JSON.parse(readFileSync(ts, "utf8")).bin;
+    const tsc = join(dirname(ts), typeof bin === "string" ? bin : bin.tsc);
     const r = spawnSync(process.execPath, [tsc, "-p", resolve(ui, "tsconfig.json"), "--noEmit"], { stdio: "inherit" });
     process.exit(r.status ?? 2);
     break;
