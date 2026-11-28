@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { fileURLToPath } from "node:url";
-import reasonr from "../packages/vite/src/index";
+import reasonr from "../packages/vite/src/index.js";
 
 // The build goes to web/bundle/src/dist: the bundle Go package embeds it (go:embed).
 export default defineConfig({

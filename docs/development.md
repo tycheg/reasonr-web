@@ -1,6 +1,6 @@
 # Development and tests
 
-Node.js 20+ and Go 1.23+.
+Node.js 26+ and Go 1.27.4+.
 
 ```bash
 make check     # npm ci, typecheck, the runtime, catalog and plugin tests (Vitest), the built-in bundle matches the sources; gofmt, vet, staticcheck of bundle and driver

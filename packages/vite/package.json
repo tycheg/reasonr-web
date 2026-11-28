@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "ReasonR engine UI tools: the reasonr-ui command (dev, test, build, types, typecheck), a Vite plugin with custom primitive implementations, the primitives page",
   "license": "Apache-2.0",
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tycheg/reasonr-web.git",
@@ -23,15 +26,15 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@testing-library/react": "^16.3.0",
-    "@types/node": "^20.19.43",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0",
-    "@vitejs/plugin-react": "^4.7.0",
-    "jsdom": "^26.1.0",
-    "typescript": "~5.8.3",
-    "vite": "^6.4.5",
-    "vitest": "^3.2.4"
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^26.6.11",
+    "@types/react": "^19.3.3",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "jsdom": "^31.0.1",
+    "typescript": "~7.0.2",
+    "vite": "^8.4.0",
+    "vitest": "^5.1.2"
   },
   "peerDependencies": {
     "@tycheg/reasonr-runtime": "*",

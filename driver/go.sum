@@ -1,9 +1,11 @@
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/deckarep/golang-set/v2 v2.8.0 h1:swm0rlPCmdWn9mESxKOjWk8hXSqoxOp+ZlfuyaAdFlQ=
-github.com/deckarep/golang-set/v2 v2.8.0/go.mod h1:VAky9rY/yGXJOLEDv3OMci+7wtDpOF4IN+y82NBOac4=
+github.com/deckarep/golang-set/v2 v2.9.0 h1:prva4eP9UysWagLyKrtn074ughi0NnkIf0A4M5yOCKI=
+github.com/deckarep/golang-set/v2 v2.9.0/go.mod h1:EWknQXbs0mcFpat2QOoXV0Ee57cD+w6ZEN76BR2JVrM=
 github.com/go-stack/stack v1.8.1 h1:ntEHSVwIt7PNXNpgPmVfMrNhLtgjlmnZha2kOpuRiDw=
 github.com/go-stack/stack v1.8.1/go.mod h1:dcoOX6HbPZSZptuspn9bctJ+N/CnF5gGygcUP3XYfe4=
+github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
+github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
 github.com/mxschmitt/playwright-go v0.6401.0 h1:PQbHqgzMQiY6pq8YsBBM5AXYnOs9TnlyzNVcGOznYJ8=
 github.com/mxschmitt/playwright-go v0.6401.0/go.mod h1:vLBP2yVO1gokUlb9ENA+YE3VQaVqf2A9BGxcb7aPjMI=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
@@ -12,9 +14,11 @@ github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcU
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
 github.com/tycheg/reasonr-compiler v0.1.0 h1:/2bbuQmRP+tknm2PfK2QQqY0dRRT0ql9x40HFMZ6OcI=
 github.com/tycheg/reasonr-compiler v0.1.0/go.mod h1:f89oP2u0gdDTdomQTXm+WFXKLsnL89dMUmciRpFTTL0=
-github.com/tycheg/reasonr-engine v0.1.1 h1:+KTRyTPGZB9G+6JSin15Nxi3J7Eaeg1rTeKK4YmRgIc=
-github.com/tycheg/reasonr-engine v0.1.1/go.mod h1:TFscKryJaqYPmu+u4BeozsCH6yd5o/i9yRmzKG/CT5M=
+github.com/tycheg/reasonr-engine v0.1.2 h1:y7nds6ofIXIhhCZhU3nuZ6fH9V5cOa3FF2qNzYvWP/w=
+github.com/tycheg/reasonr-engine v0.1.2/go.mod h1:TFscKryJaqYPmu+u4BeozsCH6yd5o/i9yRmzKG/CT5M=
 github.com/tycheg/reasonr-engine/port v0.1.0 h1:CrGGZO4Q94cSICnTJljQ5GSKE2ouyu6lZRpy9XncNvE=
 github.com/tycheg/reasonr-engine/port v0.1.0/go.mod h1:PB/8ajFBwWdSB1cfgmtzpKEYr6C7Hlzc7AFJ4jOEAa8=
+go.mongodb.org/mongo-driver v1.17.10 h1:kdAgQvu8TROXZpSkJQd5wzfaNCCrMbpZyKFtQ6qkPCE=
+go.mongodb.org/mongo-driver v1.17.10/go.mod h1:LlOhpH5NUEfhxcAwG0UEkMqwYcc4JU18gtCdGudk/tQ=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
 gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
